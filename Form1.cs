@@ -15,8 +15,10 @@ namespace ATM
     // Form1 Class
     public partial class Form1 : Form
     {
-        public static string user_id;
+        public static int user_id;
         private FormHandler formHandler;
+
+        //public static String 
 
         public Form1()
         {
@@ -99,7 +101,7 @@ namespace ATM
         {
             databaseConnector.OpenConnection();
 
-            string checkquery = $"SELECT * FROM users WHERE username = '{accountNumber}' AND Password = '{password}'";
+            string checkquery = $"SELECT * FROM users WHERE Account_Number = '{accountNumber}' AND Password = '{password}'";
             MySqlCommand cmd = databaseConnector.CreateCommand(checkquery);
 
             try
@@ -108,7 +110,7 @@ namespace ATM
                 {
                     if (reader.Read())
                     {
-                        Form1.user_id = reader.GetString("UserID");
+                        Form1.user_id = reader.GetInt32("Account_Number");
                         return true;
                     }
                     else
@@ -153,7 +155,6 @@ namespace ATM
             if (accountAuthenticator.CheckCredentials(accountNumber, password, form))
             {
                 MessageBox.Show("Login Successful");
-                Form1.user_id = accountNumber;
 
                 form.Hide();
                 TransOptions transactions = new TransOptions();

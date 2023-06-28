@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.password = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.accNum = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,11 +65,23 @@
             this.groupBox1.Text = "User Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(27, 164);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(270, 29);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Create\r\n\r\n";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(197, 120);
+            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.Location = new System.Drawing.Point(184, 120);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(100, 24);
+            this.password.Size = new System.Drawing.Size(113, 21);
             this.password.TabIndex = 10;
             // 
             // label6
@@ -84,9 +96,10 @@
             // 
             // accNum
             // 
-            this.accNum.Location = new System.Drawing.Point(197, 56);
+            this.accNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accNum.Location = new System.Drawing.Point(184, 56);
             this.accNum.Name = "accNum";
-            this.accNum.Size = new System.Drawing.Size(100, 24);
+            this.accNum.Size = new System.Drawing.Size(113, 21);
             this.accNum.TabIndex = 8;
             this.accNum.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -103,16 +116,18 @@
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(197, 88);
+            this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email.Location = new System.Drawing.Point(184, 88);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(100, 24);
+            this.email.Size = new System.Drawing.Size(113, 21);
             this.email.TabIndex = 6;
             // 
             // accName
             // 
-            this.accName.Location = new System.Drawing.Point(197, 23);
+            this.accName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accName.Location = new System.Drawing.Point(184, 23);
             this.accName.Name = "accName";
-            this.accName.Size = new System.Drawing.Size(100, 24);
+            this.accName.Size = new System.Drawing.Size(113, 21);
             this.accName.TabIndex = 5;
             this.accName.TextChanged += new System.EventHandler(this.accName_TextChanged);
             // 
@@ -179,17 +194,6 @@
             this.label8.Size = new System.Drawing.Size(149, 15);
             this.label8.TabIndex = 6;
             this.label8.Text = "Already have an account ?";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(27, 164);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(270, 29);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Create\r\n\r\n";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Create_Account
             // 

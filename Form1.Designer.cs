@@ -91,16 +91,18 @@
             // 
             // password
             // 
+            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.Location = new System.Drawing.Point(239, 76);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(100, 24);
+            this.password.Size = new System.Drawing.Size(100, 21);
             this.password.TabIndex = 6;
             // 
             // accNo
             // 
+            this.accNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accNo.Location = new System.Drawing.Point(239, 34);
             this.accNo.Name = "accNo";
-            this.accNo.Size = new System.Drawing.Size(100, 24);
+            this.accNo.Size = new System.Drawing.Size(100, 21);
             this.accNo.TabIndex = 5;
             this.accNo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 

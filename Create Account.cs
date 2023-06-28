@@ -52,6 +52,8 @@ namespace ATM
         }
     }
 
+   
+
 
     // Account Creation Class
     public class AccountCreator
@@ -74,7 +76,7 @@ namespace ATM
             databaseConnector.OpenConnection();
 
             // Check if the user already exists
-            string checkQuery = $"SELECT COUNT(*) FROM users WHERE username = '{accNum}'";
+            string checkQuery = $"SELECT COUNT(*) FROM users WHERE Account_Number = '{accNum}'";
             MySqlCommand checkCmd = databaseConnector.CreateCommand(checkQuery);
             int userCount = Convert.ToInt32(checkCmd.ExecuteScalar());
 
@@ -86,17 +88,27 @@ namespace ATM
             }
 
             // Create the new account
-            string insertQuery = "INSERT INTO users (UserID, username, FullName, Phone, Password) " +
-                                 "VALUES ('', @user, @name, @phone, @password)";
+            string insertQuery = "INSERT INTO users (UserID, Account_Name, Account_Number, Email, Password) " +
+                                 "VALUES ('', @accName, @accNum, @email, @password)";
 
             MySqlCommand insertCmd = databaseConnector.CreateCommand(insertQuery);
-            insertCmd.Parameters.AddWithValue("@user", accNum);
-            insertCmd.Parameters.AddWithValue("@name", accName);
-            insertCmd.Parameters.AddWithValue("@phone", email);
+            insertCmd.Parameters.AddWithValue("@accName", accName);
+            insertCmd.Parameters.AddWithValue("@accNum", accNum);
+            insertCmd.Parameters.AddWithValue("@email", email);
             insertCmd.Parameters.AddWithValue("@password", password);
+
+            
+            // Create the new account
+            string accountQuery = "INSERT INTO accounts (Account_Number, Balance) " +
+                                 "VALUES (@accNum, @balance)";
+
+            MySqlCommand accountCmd = databaseConnector.CreateCommand(accountQuery);
+            accountCmd.Parameters.AddWithValue("@accNum", accNum);
+            accountCmd.Parameters.AddWithValue("@balance", 0);           
 
             try
             {
+                accountCmd.ExecuteNonQuery();
                 int rowsAffected = insertCmd.ExecuteNonQuery();
                 databaseConnector.CloseConnection();
                 return rowsAffected > 0;
